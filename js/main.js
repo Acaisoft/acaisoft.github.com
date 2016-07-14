@@ -13,7 +13,7 @@ google.maps.event.addDomListener(window, 'load', init);
 function init() {
 	var mapOptions = {
 	  zoom: 11,
-	  center: new google.maps.LatLng(52.1748753,21.0692339,17),
+	  center: new google.maps.LatLng(52.174872, 21.0714279),
 	  styles: [
 		{
 		  "featureType": "landscape", "stylers": [{"saturation": -100}, {"lightness": 65}, {"visibility": "on"}]
@@ -40,7 +40,7 @@ function init() {
 
 	// Let's also add a marker while we're at it
 	var marker = new google.maps.Marker({
-	  position: new google.maps.LatLng(52.1748753,21.0692339,17),
+	  position: new google.maps.LatLng(52.174872, 21.0714279),
 	  map: map,
 	  title: 'Acaisoft Office'
 	});
