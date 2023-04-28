@@ -1,6 +1,15 @@
 {
   "extends": "next/core-web-vitals",
+  "settings": {
+    "tailwindcss": {
+      "whitelist": ["clutch-widget"]
+    }
+  },
   "rules": {
-    "no-console": "warn"
-  }
+    "no-console": "warn",
+    "react/no-unknown-property": "warn",
+    "tailwindcss/no-custom-classname": "warn",
+    "tailwindcss/no-contradicting-classname": "error"
+  },
+  "plugins": ["tailwindcss"]
 }
