@@ -187,7 +187,7 @@ export const OurServices: React.FC<OurServicesProps> = () => {
         >
           <Tabs.List
             aria-label="Services"
-            className="flex max-w-md flex-1 flex-col border-r border-grey-200"
+            className="flex flex-1 flex-col border-r border-grey-200"
           >
             {services.map((s) => (
               <Tabs.Trigger
@@ -206,7 +206,7 @@ export const OurServices: React.FC<OurServicesProps> = () => {
             <Tabs.Content
               key={s.title}
               value={s.title}
-              className="max-w-3xl flex-[2] pl-20"
+              className="flex-[2] pl-20"
             >
               <div className="text-sm text-grey-500">Our Services</div>
               <div className="mb-8 text-3xl font-bold">{s.title}</div>
