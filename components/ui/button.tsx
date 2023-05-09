@@ -19,6 +19,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             "bg-white text-blue-950 hover:bg-blue-950 hover:text-white",
           variant === "dark" &&
             "border border-slate-900 bg-slate-900 text-white hover:bg-transparent hover:text-blue-950",
+          variant === "transparent" &&
+            "border border-white text-white hover:bg-white hover:text-blue-950",
           className
         )}
       >

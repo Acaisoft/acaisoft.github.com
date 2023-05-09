@@ -49,13 +49,17 @@ export const Navbar: React.FC<NavbarProps> = ({ transparent }) => {
     setMenuOpen(false);
   }, [router.pathname]);
 
+  const isTransparent = transparent && !isScrolled;
+
   return (
     <header
+      data-transparent={isTransparent || undefined}
       className={clsx(
-        "top-0 z-30 w-full transition-colors duration-200",
-        "sticky bg-white"
-        // transparent && !isScrolled ? "text-white" : "bg-white",
-        // transparent ? "fixed" : "sticky"
+        "top-0 z-30 w-full bg-white transition-colors duration-200",
+        // This cannot change regardless of scroll
+        transparent ? "sticky lg:fixed" : "sticky",
+        // Transparent styles
+        "lg:data-[transparent]:bg-transparent lg:data-[transparent]:text-white"
       )}
     >
       <div className="container flex h-[60px] items-center lg:h-20">
@@ -79,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({ transparent }) => {
                   <Menu.Button className="p-5 transition-transform hover:scale-110">
                     {item.label}
                   </Menu.Button>
-                  <Menu.Items className="absolute left-0 z-40 flex flex-col gap-1 rounded-xl border border-grey-200 bg-white px-6 py-5 pr-14">
+                  <Menu.Items className="absolute left-0 z-40 flex flex-col gap-1 rounded-xl border border-grey-200 bg-white px-6 py-5 pr-14 text-grey-700">
                     {item.children.map((subItem) => (
                       <Menu.Item key={subItem.label}>
                         <Link
@@ -108,7 +112,7 @@ export const Navbar: React.FC<NavbarProps> = ({ transparent }) => {
           )}
         </button>
         <Button
-          variant="dark"
+          variant={isTransparent ? "transparent" : "dark"}
           className="hidden lg:inline-block"
           endIcon={<MdKeyboardArrowRight />}
         >
