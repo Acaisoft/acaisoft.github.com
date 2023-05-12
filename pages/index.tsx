@@ -1,4 +1,4 @@
-import { ContactUsSection } from "@/components/home/contact-us-section";
+import { ContactUsSection } from "@/components/shared/contact-us-section";
 import { HeroSection } from "@/components/home/hero-section";
 import { OurServices } from "@/components/home/our-services";
 import { Testimonials } from "@/components/home/testimonials";
