@@ -1,20 +1,24 @@
 import clsx from "clsx";
 import React, { ComponentPropsWithoutRef, ReactNode, forwardRef } from "react";
+import { Slot, Slottable } from "@radix-ui/react-slot";
 
 export type ButtonProps = {
   variant: "transparent" | "dark" | "light";
   endIcon?: ReactNode;
+  asChild?: boolean;
 } & ComponentPropsWithoutRef<"button">;
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant, className, children, endIcon, ...props }, ref) => {
+  ({ variant, className, children, endIcon, asChild, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button";
+
     return (
-      <button
+      <Comp
         ref={ref}
         type="button"
         {...props}
         className={clsx(
-          "relative h-12 rounded-full px-14 text-xs font-bold uppercase transition-colors duration-200",
+          "relative grid h-12 place-items-center rounded-full px-14 text-center text-xs font-bold uppercase transition-colors duration-200",
           variant === "light" &&
             "bg-white text-blue-950 hover:bg-blue-950 hover:text-white",
           variant === "dark" &&
@@ -24,13 +28,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           className
         )}
       >
-        {children}
+        <Slottable>{children}</Slottable>
         {endIcon && (
           <span className="absolute right-4 top-1/2 z-10 -translate-y-1/2 text-xl">
             {endIcon}
           </span>
         )}
-      </button>
+      </Comp>
     );
   }
 );
