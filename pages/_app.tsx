@@ -1,7 +1,12 @@
 import "@/styles/globals.css";
 import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
+import dynamic from "next/dynamic";
 import { Roboto } from "next/font/google";
+
+const ContactUsDialog = dynamic(() =>
+  import("../components/contact-form").then((mod) => mod.ContactUsDialog)
+);
 
 const inter = Roboto({
   subsets: ["latin"],
@@ -20,6 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
         twitter={{ cardType: "summary_large_image" }}
       />
       <Component {...pageProps} />
+      <ContactUsDialog />
     </main>
   );
 }

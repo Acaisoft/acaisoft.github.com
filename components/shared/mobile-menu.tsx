@@ -6,6 +6,7 @@ import React, { Fragment } from "react";
 import { MenuItem } from "./types";
 import { MdChevronRight, MdKeyboardArrowDown } from "react-icons/md";
 import { Button } from "../ui/button";
+import { ContactUsButton } from "../contact-form";
 
 export interface MobileMenuProps {
   open: boolean;
@@ -74,13 +75,10 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
                 ))}
               </nav>
 
-              <Button
+              <ContactUsButton
                 variant="dark"
-                endIcon={<MdChevronRight />}
                 className="mx-auto mb-40 mt-auto"
-              >
-                CONTACT US
-              </Button>
+              />
             </div>
           </Dialog.Panel>
         </Transition.Child>

@@ -6,6 +6,7 @@ import { Button } from "../ui/button";
 import { MdChevronRight } from "react-icons/md";
 import Image from "next/image";
 import lines from "../../public/images/lines-1.svg";
+import { ContactUsButton } from "../contact-form";
 
 export interface ContactUsSectionProps {}
 
@@ -25,9 +26,7 @@ export const ContactUsSection: React.FC<ContactUsSectionProps> = () => {
 
             <div className="mb-8 lg:mb-10">Interested? Contact us!</div>
 
-            <Button variant="light" endIcon={<MdChevronRight />}>
-              CONTACT US
-            </Button>
+            <ContactUsButton variant="light" />
           </div>
         </TwoColumnLayout>
       </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { MdChevronRight } from "react-icons/md";
 import { Button } from "../ui/button";
 import { HomeVideoBackground } from "./home-video-background";
+import { ContactUsButton } from "../contact-form";
 
 export interface HeroSectionProps {}
 
@@ -20,13 +21,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             We are a solution company focusing on building cloud-based
             end-to-end SaaS platforms.
           </h3>
-          <Button
-            variant="light"
-            className="mt-10"
-            endIcon={<MdChevronRight />}
-          >
-            CONTACT US
-          </Button>
+          <ContactUsButton variant="light" className="mt-10" />
         </div>
       </div>
     </section>

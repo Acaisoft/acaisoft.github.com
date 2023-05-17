@@ -9,6 +9,7 @@ import { Logo } from "../icons/logo";
 import { Button } from "../ui/button";
 import { MobileMenu } from "./mobile-menu";
 import { MenuItem } from "./types";
+import { ContactUsButton } from "../contact-form";
 
 const menuItems: MenuItem[] = [
   { label: "Home", href: "/" },
@@ -111,13 +112,10 @@ export const Navbar: React.FC<NavbarProps> = ({ transparent }) => {
             <MdMenu className="h-10 w-10" />
           )}
         </button>
-        <Button
+        <ContactUsButton
           variant={isTransparent ? "transparent" : "dark"}
           className="hidden lg:inline-block"
-          endIcon={<MdKeyboardArrowRight />}
-        >
-          CONTACT US
-        </Button>
+        />
       </div>
       <MobileMenu
         open={menuOpen}

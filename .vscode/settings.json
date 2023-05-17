@@ -10,6 +10,7 @@
     "tailwindcss",
     "unoptimized",
     "usehooks",
-    "webm"
+    "webm",
+    "zustand"
   ]
 }
