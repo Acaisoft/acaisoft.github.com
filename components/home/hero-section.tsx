@@ -1,8 +1,6 @@
 import React from "react";
-import { MdChevronRight } from "react-icons/md";
-import { Button } from "../ui/button";
+import { ContactUsButton } from "../contact-form/button";
 import { HomeVideoBackground } from "./home-video-background";
-import { ContactUsButton } from "../contact-form";
 
 export interface HeroSectionProps {}
 

@@ -3,13 +3,12 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { Fragment, useEffect, useState } from "react";
-import { MdClose, MdKeyboardArrowRight, MdMenu } from "react-icons/md";
+import { MdClose, MdMenu } from "react-icons/md";
 import { useEventCallback, useEventListener } from "usehooks-ts";
+import { ContactUsButton } from "../contact-form/button";
 import { Logo } from "../icons/logo";
-import { Button } from "../ui/button";
 import { MobileMenu } from "./mobile-menu";
 import { MenuItem } from "./types";
-import { ContactUsButton } from "../contact-form";
 
 const menuItems: MenuItem[] = [
   { label: "Home", href: "/" },

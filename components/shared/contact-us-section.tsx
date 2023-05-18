@@ -1,12 +1,10 @@
+import Image from "next/image";
 import React from "react";
-import { TwoColumnLayout } from "../ui/two-column-layout";
+import lines from "../../public/images/lines-1.svg";
+import { ContactUsButton } from "../contact-form/button";
 import { SectionHeader } from "../ui/section-header";
 import { Statement } from "../ui/statement";
-import { Button } from "../ui/button";
-import { MdChevronRight } from "react-icons/md";
-import Image from "next/image";
-import lines from "../../public/images/lines-1.svg";
-import { ContactUsButton } from "../contact-form";
+import { TwoColumnLayout } from "../ui/two-column-layout";
 
 export interface ContactUsSectionProps {}
 

@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { Roboto } from "next/font/google";
 
 const ContactUsDialog = dynamic(() =>
-  import("../components/contact-form").then((mod) => mod.ContactUsDialog)
+  import("../components/contact-form/dialog").then((mod) => mod.ContactUsDialog)
 );
 
 const inter = Roboto({
