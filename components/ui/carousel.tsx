@@ -5,9 +5,10 @@ import React, { ReactNode, useEffect, useState } from "react";
 
 export interface CarouselProps {
   children?: ReactNode;
+  className?: string;
 }
 
-const Root: React.FC<CarouselProps> = ({ children }) => {
+const Root: React.FC<CarouselProps> = ({ children, className }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, slidesToScroll: 1, align: "start" },
     [Autoplay({ delay: 4000 })]
@@ -37,7 +38,7 @@ const Root: React.FC<CarouselProps> = ({ children }) => {
   }, [emblaApi]);
 
   return (
-    <div ref={emblaRef} className="overflow-hidden">
+    <div ref={emblaRef} className={clsx("overflow-hidden", className)}>
       <div className="flex">{children}</div>
 
       <div className="mt-24 flex justify-center gap-2">

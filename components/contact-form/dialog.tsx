@@ -13,6 +13,7 @@ import { Input } from "../ui/input";
 import { StatementMark } from "../ui/statement-mark";
 import { Textarea } from "../ui/textarea";
 import { useContactFormStore } from "./store";
+import { Person } from "../ui/person";
 
 export interface ContactUsDialogProps {}
 
@@ -151,18 +152,14 @@ export const ContactUsDialog: React.FC<ContactUsDialogProps> = () => {
                 developments than what had been done in the last four years in
                 our company.
               </Blockquote>
-              <div className="ml-2 mt-10 flex items-center gap-5 pt-5">
-                <Image
-                  src={pabloVerano}
-                  alt="Pablo Verano"
-                  className="h-20 w-20 rounded-full shadow-[0_2px_4px_6px_rgba(0,0,0,.12)]"
-                />
-                <div className="text-sm">
-                  <div className="font-bold">Pablo Verano</div>
-                  <div className="mb-0.5">Head of Product</div>
-                  <div>Scoopr</div>
-                </div>
-              </div>
+              <Person
+                className="ml-2 mt-10"
+                variant="light"
+                photo={pabloVerano}
+                name="Pablo Verano"
+                role="Head of Product"
+                extra="Scoopr"
+              />
             </div>
           </Dialog.Panel>
         </Transition.Child>

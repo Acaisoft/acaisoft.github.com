@@ -25,13 +25,13 @@ const Trigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={clsx(
-        "flex flex-1 items-center py-5 text-xl font-medium text-slate-900 transition-all [&[data-state=open]>svg]:rotate-180",
+        "flex flex-1 items-center gap-2 py-5 text-left text-xl font-medium text-slate-900 transition-all [&[data-state=open]>svg]:rotate-180",
         className
       )}
       {...props}
     >
       {children}
-      <MdKeyboardArrowDown className="ml-auto mr-1.5 text-3xl transition-transform duration-200" />
+      <MdKeyboardArrowDown className="ml-auto mr-1.5 flex-shrink-0 text-3xl transition-transform duration-200" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
@@ -44,7 +44,7 @@ const Content = React.forwardRef<
   <AccordionPrimitive.Content
     ref={ref}
     className={clsx(
-      "overflow-hidden text-sm text-grey-500 transition-all duration-200 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
+      "overflow-hidden text-grey-500 transition-all duration-200 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
       className
     )}
     {...props}

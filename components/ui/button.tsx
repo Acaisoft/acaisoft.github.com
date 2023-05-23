@@ -3,7 +3,7 @@ import React, { ComponentPropsWithoutRef, ReactNode, forwardRef } from "react";
 import { Slot, Slottable } from "@radix-ui/react-slot";
 
 export type ButtonProps = {
-  variant: "transparent" | "dark" | "light";
+  variant: "transparent" | "dark" | "light" | "outlined";
   endIcon?: ReactNode;
   asChild?: boolean;
 } & ComponentPropsWithoutRef<"button">;
@@ -25,6 +25,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             "border border-slate-900 bg-slate-900 text-white hover:bg-transparent hover:text-blue-950",
           variant === "transparent" &&
             "border border-white text-white hover:bg-white hover:text-blue-950",
+          variant === "outlined" &&
+            "border border-blue-950 bg-white text-blue-950 hover:bg-blue-950 hover:text-white",
           className
         )}
       >

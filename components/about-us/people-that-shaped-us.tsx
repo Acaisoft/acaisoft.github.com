@@ -6,11 +6,11 @@ import team from "../../public/images/team.webp";
 
 import Image from "next/image";
 import React from "react";
+import { MdOutlineMail } from "react-icons/md";
+import { SiLinkedin } from "react-icons/si";
 import { SectionHeader } from "../ui/section-header";
 import { Statement } from "../ui/statement";
 import { TwoColumnLayout } from "../ui/two-column-layout";
-import { SiLinkedin } from "react-icons/si";
-import { MdMail, MdOutlineMail } from "react-icons/md";
 
 const people = [
   {
