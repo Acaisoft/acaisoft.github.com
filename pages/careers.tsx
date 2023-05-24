@@ -1,6 +1,6 @@
 import { Faq } from "@/components/careers/faq";
 import { GotQuestions } from "@/components/careers/got-questions";
-import { OurBenefits } from "@/components/careers/our-benefits";
+import { OurBenefits } from "@/components/shared/our-benefits";
 import { OurEmployeesAboutUs } from "@/components/careers/our-employees-about-us";
 import { OurValues } from "@/components/careers/our-values";
 import { Possibilities } from "@/components/careers/possibilities";

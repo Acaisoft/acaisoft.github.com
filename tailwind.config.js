@@ -34,7 +34,7 @@ module.exports = {
         200: "#e1e1e1", // Consider replacing with `300`
         300: "#e7e7e7",
         400: "#9d9d9d",
-        500: "#848484",
+        500: "#767676",
         600: "#454545",
         700: "#303030",
       },
@@ -72,6 +72,10 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      listStyleImage: {
+        "circle-green": "url('/images/icons/marker-green.svg')",
+        "circle-purple": "url('/images/icons/marker-purple.svg')",
       },
     },
   },

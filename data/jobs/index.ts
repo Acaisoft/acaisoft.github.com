@@ -1,3 +1,4 @@
+import { Job } from "../other";
 import { dataEngineerTechLead } from "./data-engineer-tech-lead";
 import { midDeliveryManager } from "./mid-delivery-manager";
 import { midFullstackDeveloper } from "./mid-fullstack-developer";
@@ -15,3 +16,10 @@ export const jobs = [
   midGolangEngineer,
   seniorReactNativeEngineer,
 ];
+
+export const getSimilarJobs = (job: Job) =>
+  jobs.filter(
+    (j) =>
+      j.slug !== job.slug &&
+      j.technologies.some((t) => job.technologies.includes(t))
+  );
