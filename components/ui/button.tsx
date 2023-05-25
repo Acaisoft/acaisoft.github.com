@@ -18,7 +18,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         type="button"
         {...props}
         className={clsx(
-          "relative grid h-12 place-items-center rounded-full px-14 text-center text-xs font-bold uppercase transition-colors duration-200",
+          "relative inline-grid h-12 place-items-center rounded-full px-14 text-center text-xs font-bold uppercase transition-colors duration-200",
           variant === "light" &&
             "bg-white text-blue-950 hover:bg-blue-950 hover:text-white",
           variant === "dark" &&
