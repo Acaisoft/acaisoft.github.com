@@ -19,7 +19,7 @@ export const Possibilities: React.FC<PossibilitiesProps> = () => {
         comments the position they would like to work in. We will contact you as
         soon as something suitable pops up!
       </p>
-      <div className="flex justify-center gap-2 sm:gap-4">
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
         <Button variant="dark" endIcon={<MdKeyboardArrowRight />}>
           GO TO FORM
         </Button>

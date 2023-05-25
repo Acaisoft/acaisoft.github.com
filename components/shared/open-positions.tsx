@@ -6,12 +6,13 @@ import {
   locations,
 } from "@/data";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import { FilterSelect } from "../ui/filter-select";
 import { JobList } from "../ui/job-list";
 import { SectionHeader } from "../ui/section-header";
 import { Statement } from "../ui/statement";
 import { TwoColumnLayout } from "../ui/two-column-layout";
+import { Button } from "../ui/button";
 
 const removeUndefinedProperties = <T extends { [key: string]: any }>(
   obj: T
@@ -25,9 +26,13 @@ const removeUndefinedProperties = <T extends { [key: string]: any }>(
 
 const coerceValue = (value: string) => (value === "All" ? undefined : value);
 
-export interface OpenPositionsProps {}
+export interface OpenPositionsProps {
+  limited?: boolean;
+}
 
-export const OpenPositions: React.FC<OpenPositionsProps> = () => {
+export const OpenPositions: React.FC<OpenPositionsProps> = ({ limited }) => {
+  const [showAll, setShowAll] = useState(!limited);
+
   const router = useRouter();
   const { category, experience, location } = router.query as Record<
     string,
@@ -40,6 +45,10 @@ export const OpenPositions: React.FC<OpenPositionsProps> = () => {
     .filter((j) =>
       location ? j.locations.includes(location as JobLocation) : true
     );
+
+  const limitedJobs = filteredJobs.slice(0, showAll ? -1 : 5);
+
+  const extra = filteredJobs.length - limitedJobs.length || undefined;
 
   const updateFilters = (filters: {
     category?: string;
@@ -101,7 +110,15 @@ export const OpenPositions: React.FC<OpenPositionsProps> = () => {
         />
       </div>
 
-      <JobList jobs={filteredJobs} />
+      <JobList jobs={limitedJobs} />
+
+      {!showAll && extra && (
+        <div className="mt-8 text-center">
+          <Button variant="dark" onClick={() => setShowAll(true)}>
+            View more (+{extra})
+          </Button>
+        </div>
+      )}
     </section>
   );
 };
