@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { Fragment, useEffect, useState } from "react";
 import { MdClose, MdMenu } from "react-icons/md";
-import { useEventCallback, useEventListener } from "usehooks-ts";
+import { useEventCallback, useEventListener, useMediaQuery } from "usehooks-ts";
 import { ContactUsButton } from "../contact-form/button";
 import { Logo } from "../icons/logo";
 import { MobileMenu } from "./mobile-menu";
@@ -41,6 +41,8 @@ export const Navbar: React.FC<NavbarProps> = ({ transparent }) => {
 
   useEventListener("scroll", updateIsScrolled);
 
+  const isDesktop = useMediaQuery("(min-width: 1024px)"); // `lg` breakpoint
+
   useEffect(() => {
     updateIsScrolled();
   }, [updateIsScrolled]);
@@ -48,6 +50,12 @@ export const Navbar: React.FC<NavbarProps> = ({ transparent }) => {
   useEffect(() => {
     setMenuOpen(false);
   }, [router.pathname]);
+
+  useEffect(() => {
+    if (isDesktop) {
+      setMenuOpen(false);
+    }
+  }, [isDesktop]);
 
   const isTransparent = transparent && !isScrolled;
 
