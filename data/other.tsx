@@ -43,6 +43,7 @@ export const jobCategories = [
   "DevOps",
   "Design",
   "QA",
+  "Marketing",
 ] as const;
 
 export type JobCategory = (typeof jobCategories)[number];
