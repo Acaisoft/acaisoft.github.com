@@ -10,7 +10,12 @@ export interface CarouselProps {
 
 const Root: React.FC<CarouselProps> = ({ children, className }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, slidesToScroll: 1, align: "start" },
+    {
+      loop: true,
+      slidesToScroll: 1,
+      align: "start",
+      containScroll: "keepSnaps",
+    },
     [Autoplay({ delay: 4000 })]
   );
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
@@ -42,16 +47,18 @@ const Root: React.FC<CarouselProps> = ({ children, className }) => {
       <div className="flex">{children}</div>
 
       <div className="mt-24 flex justify-center gap-2">
-        {scrollSnaps.map((s, i) => (
-          <button
-            key={s}
-            className={clsx(
-              "h-2 w-2 rounded-full",
-              i === selectedIndex ? "bg-grey-700" : "bg-grey-500"
-            )}
-            onClick={() => emblaApi?.scrollTo(i)}
-          />
-        ))}
+        {scrollSnaps
+          .filter((s) => !Number.isNaN(s)) // It happens when using `containScroll: "keepSnaps"`
+          .map((s, i) => (
+            <button
+              key={s}
+              className={clsx(
+                "h-2 w-2 rounded-full",
+                i === selectedIndex ? "bg-grey-700" : "bg-grey-500"
+              )}
+              onClick={() => emblaApi?.scrollTo(i)}
+            />
+          ))}
       </div>
     </div>
   );

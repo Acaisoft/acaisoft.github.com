@@ -1,5 +1,4 @@
 import { Dialog, Transition } from "@headlessui/react";
-import Image from "next/image";
 import Link from "next/link";
 import React, { Fragment, useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -10,10 +9,10 @@ import { Blockquote } from "../ui/blockquote";
 import { Button } from "../ui/button";
 import { CheckboxInput } from "../ui/checkbox-input";
 import { Input } from "../ui/input";
+import { Person } from "../ui/person";
 import { StatementMark } from "../ui/statement-mark";
 import { Textarea } from "../ui/textarea";
 import { useContactFormStore } from "./store";
-import { Person } from "../ui/person";
 
 export interface ContactUsDialogProps {}
 
@@ -30,7 +29,7 @@ export const ContactUsDialog: React.FC<ContactUsDialogProps> = () => {
   const {
     register,
     handleSubmit,
-    formState: { isSubmitted },
+    formState: { isSubmitted, isSubmitting },
     reset,
   } = useForm<FormType>({
     shouldUseNativeValidation: true,
@@ -137,6 +136,7 @@ export const ContactUsDialog: React.FC<ContactUsDialogProps> = () => {
                       className="mt-8"
                       endIcon={<MdKeyboardArrowRight />}
                       type="submit"
+                      disabled={isSubmitting}
                     >
                       SEND MESSAGE
                     </Button>

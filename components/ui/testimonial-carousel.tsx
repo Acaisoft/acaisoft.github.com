@@ -8,8 +8,8 @@ export type Testimonial = {
   content: ReactNode;
   name: string;
   role: string;
-  extra: string;
-  photo: StaticImageData;
+  extra?: string;
+  photo?: StaticImageData;
 };
 
 export interface TestimonialCarouselProps {
@@ -29,7 +29,7 @@ export const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
             <Blockquote responsive={false}>{d.content}</Blockquote>
 
             <Person
-              className="ml-2 mt-auto"
+              className="mt-auto"
               photo={d.photo}
               name={d.name}
               role={d.role}

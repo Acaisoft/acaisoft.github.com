@@ -4,7 +4,7 @@ import React, { ReactNode } from "react";
 
 export interface PersonProps {
   variant?: "dark" | "light";
-  photo: string | StaticImageData;
+  photo?: StaticImageData;
   name: string;
   role: string;
   extra: ReactNode;
@@ -29,11 +29,13 @@ export const Person: React.FC<PersonProps> = ({
         className
       )}
     >
-      <Image
-        src={photo}
-        alt={name}
-        className="h-20 w-20 rounded-full object-cover shadow-[0_2px_4px_6px_rgba(0,0,0,.12)]"
-      />
+      {photo && (
+        <Image
+          src={photo}
+          alt={name}
+          className="h-20 w-20 rounded-full object-cover shadow-[0_2px_4px_6px_rgba(0,0,0,.12)]"
+        />
+      )}
       <div className="text-sm">
         <div className="font-bold group-data-[dark]:text-slate-900">{name}</div>
         <div className="mb-0.5 group-data-[dark]:text-grey-600">{role}</div>

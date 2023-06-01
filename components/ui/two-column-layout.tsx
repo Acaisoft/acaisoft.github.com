@@ -13,7 +13,7 @@ export const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
   return (
     <div
       className={clsx(
-        "grid grid-cols-1 gap-2 gap-y-10 lg:grid-cols-2",
+        "grid grid-cols-1 gap-4 gap-y-10 lg:grid-cols-2",
         className
       )}
     >
